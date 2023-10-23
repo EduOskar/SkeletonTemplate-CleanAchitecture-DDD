@@ -19,6 +19,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+//builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:53874/") });
+
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
