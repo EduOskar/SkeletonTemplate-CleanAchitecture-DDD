@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Infrastructure;
+namespace WebApiSwagger;
 
 public static class DependancyInjection
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+    public static IServiceCollection AddWebApiSwagger(this IServiceCollection services)
     {
 
         return services;
