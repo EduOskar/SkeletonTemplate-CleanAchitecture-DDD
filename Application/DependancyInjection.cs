@@ -6,23 +6,22 @@ using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Application
+namespace Application;
+
+public static class DependancyInjection
 {
-    public static class DependancyInjection
+    public static IServiceCollection AddApplication(this IServiceCollection services)
     {
-        public static IServiceCollection AddApplication(this IServiceCollection services)
-        {
 
-            var assembly = typeof(DependancyInjection).Assembly;
+        var assembly = typeof(DependancyInjection).Assembly;
 
-            services.AddMediatR(configuration =>
-                    configuration.RegisterServicesFromAssemblies(
-                        typeof(DependancyInjection).Assembly));
+        services.AddMediatR(configuration =>
+                configuration.RegisterServicesFromAssemblies(
+                    typeof(DependancyInjection).Assembly));
 
-            services.AddValidatorsFromAssembly(assembly);
+        services.AddValidatorsFromAssembly(assembly);
 
-            return services;
+        return services;
 
-        }
     }
 }

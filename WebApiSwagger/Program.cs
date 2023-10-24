@@ -1,7 +1,7 @@
 using Application;
 using Infrastructure;
+using WebApiSwagger;
 using Microsoft.Net.Http.Headers;
-using Presentation;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,7 +16,9 @@ builder.Services.AddSwaggerGen();
 builder.Services
     .AddApplication()
     .AddInfrastructure()
-    .AddPresentation();
+    .AddWebApiSwagger()
+    .AddServerSideBlazor();
+    
 
 builder.Host.UseSerilog((context, configuration) =>
     configuration.ReadFrom.Configuration(context.Configuration));
